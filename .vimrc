@@ -57,3 +57,6 @@ set wrap "Wrap lines
 
 
 
+# List of plugins in bundle directory
+# vim-pathogen
+# vim-ps1
