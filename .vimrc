@@ -1,62 +1,23 @@
-execute pathogen#infect()
+"Pathogen
+call pathogen#runtime_append_all_bundles()
 
-set number
-syntax on
-filetype plugin indent on
+""============== Script configs ===============
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
 
-" Configure backspace so it acts as it should act
-set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
-
-" Highlight search results
-set hlsearch
-
-" Makes search act like search in modern browsers
-set incsearch
-
-" Show matching brackets when text indicator is over them
-set showmatch
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable syntax highlighting
-syntax enable
-
-colorscheme desert
-set background=dark
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
-set nobackup
-set nowb
-set noswapfile
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use spaces instead of tabs
-set expandtab
-
-" Be smart when using tabs ;)
-set smarttab
-
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
-
-" Linebreak on 500 characters
-set lbr
-set tw=500
-
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
-
-
-
-# List of plugins in bundle directory
-# vim-pathogen
-# vim-ps1
+" Load custom settings
+" source ~/.vim/startup/color.vim
+" source ~/.vim/startup/commands.vim
+" source ~/.vim/startup/functions.vim
+" source ~/.vim/startup/mappings.vim
+" source ~/.vim/startup/settings.vim
+"
+" " Syntax-specific settings
+" source ~/.vim/startup/js.vim
+" source ~/.vim/startup/php.vim
+" source ~/.vim/startup/vim.vim
+" source ~/.vim/startup/yaml.vim
+"
+" if &diff
+"   color skittles_dark
+"   endif
