@@ -1,14 +1,17 @@
 #!/bin/bash
 ############################
-# .make.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
+# This script symlinks config dirs in the home directory to any desired dotfiles in ~/dotfiles
 ############################
+
+# NOTE: After this script has run, to install all of the vim plugins
+# simply open vim and type :PluginInstall.. Vundle will do it's thing and
+# iterate though all of the listed Plugin and Bam!.. it's already there... Apple..
 
 ########## Variables
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
+files="bashrc vimrc vim"    
 
 ##########
 
@@ -22,10 +25,11 @@ echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do
+    # Move existing file to the backup directory
     echo "Moving any existing dotfiles from ~ to $olddir"
     mv ~/.$file ~/dotfiles_old/
+    # Create a symlink that points to the dotfiles file.
     echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/.$file
+    ln -s $dir/.$file ~/.$file
 done
