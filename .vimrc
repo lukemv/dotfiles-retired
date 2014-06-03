@@ -101,8 +101,6 @@ set backspace=indent,eol,start
 set nobackup
 set noswapfile
 
-language en_US
-
 set undodir=~/.vim_runtime/undodir
 set undofile
 

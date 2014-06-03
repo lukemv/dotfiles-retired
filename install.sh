@@ -33,3 +33,9 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/.$file ~/.$file
 done
+
+# Create the bundle directory
+mkdir ~/.vim/bundle
+
+# Clone Vundle into it
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
