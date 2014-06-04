@@ -1,4 +1,9 @@
 " ==========================================================
+" Pathogen 
+" ==========================================================
+execute pathogen#infect()
+
+" ==========================================================
 " Vundle
 " ==========================================================
 set nocompatible              " be iMproved, required
@@ -11,6 +16,7 @@ call vundle#begin()
 " My Bundles here:
 "
 " original repos on github
+" I'm going to bite the bullet and use NERDTree
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
 " Awesome plugin.. this creates the bar at the bottom.
