@@ -2,7 +2,7 @@
 force_color_prompt=yes
 
 # Alias's and stuff
-alias ls='ls -allh'
+alias ls='ls -all'
 
 # Returncode.
 function returncode

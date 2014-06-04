@@ -25,7 +25,7 @@ Plugin 'bling/vim-airline'
 " Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'majutsushi/tagbar'
-Plugin 'msanders/snipmate.vim'
+Plugin 'davidhalter/jedi-vim'
 
 " vim-scripts repos
 Plugin 'L9'
