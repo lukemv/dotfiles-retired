@@ -1,139 +1,98 @@
-" ==========================================================
-" Pathogen 
-" ==========================================================
 execute pathogen#infect()
 
-" ==========================================================
-" Vundle
-" ==========================================================
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype plugin indent off
+syntax off
 
-" set the runtime path to include Vundle and initialize
+"----------------- Vundle Start -----------------------"
 set rtp+=~/.vim/bundle/Vundle.vim
+
+" start vundle environment
+" the default is ~/.vim/bundle
 call vundle#begin()
 
-" My Bundles here:
-"
-" original repos on github
-" I'm going to bite the bullet and use NERDTree
-Plugin 'tpope/vim-fugitive'
-Plugin 'Lokaltog/vim-easymotion'
-" Awesome plugin.. this creates the bar at the bottom.
+" list of plugins {{{2
+" let Vundle manage Vundle (this is required)
+Plugin 'gmarik/Vundle.vim'
+
+" to install a plugin add it here and run :PluginInstall.
+" to update the plugins run :PluginInstall! or :PluginUpdate
+" to delete a plugin remove it here and run :PluginClean
+
+" clang_complete bug workaround:
+"   cd to clang_complete
+"   $  git checkout 6a7ad82
+"Plugin 'Rip-Rip/clang_complete'
+"Plugin 'vim-scripts/CRefVim'
+"Plugin 'sjl/gundo.vim'
+"Plugin 'jondkinney/dragvisuals.vim'
 Plugin 'bling/vim-airline'
-" Similar functionality to the multiple cursors in SublimeText.
-" Plugin 'terryma/vim-multiple-cursors'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'majutsushi/tagbar'
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'xolox/vim-misc'
+"Plugin 'xolox/vim-session'
+Plugin 'flazz/vim-colorschemes'
+"Plugin 'davidhalter/jedi-vim'
 
-" vim-scripts repos
-Plugin 'L9'
-Plugin 'FuzzyFinder'
-
+" add plugins before this
 call vundle#end()
-filetype plugin indent on
+"----------------- Vundle end ------------------------"
 
-" ==========================================================
-" Shortcuts
-" ==========================================================
-" Seriously, guys. It's not like :W is bound to anything anyway.
-command! W :w
+syntax on
 
-" Allow pasting blocks of code without indenting
-set pastetoggle=<F2>
+" I like to use the spacebar as myleader key
+" The default is \
+let mapleader = "\<Space>"
 
-"Fix Shift+Tab
-nmap <S-Tab> <<
-imap <S-Tab> <Esc><<i
+" colors {{{1
+"enable 256 colors when in gnome-terminal (my debian machine)
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+  colorscheme default"
+  "colorscheme google
+else
+  if has("gui_running")
+    colorscheme jelleybeans  " looks nice in gui.
+  else
+    colorscheme default
+  endif
+endif
+" try <http://bytefluent.com/vivify/> to test colorschemes
 
-nmap <Leader>t :TagbarToggle<CR>
-nmap <Leader>n :NERDTreeToggle<CR>
+" Encoding
+set encoding=utf-8
+set fileencoding=utf-8
+set number
+set numberwidth=6
 
-" Let me save files with sudo
-cmap w!! w !sudo tee % >/dev/null
-
-set tw=0
-set wm=0
-set nowrap
-set linebreak
-
-" ==========================================================
-" Basic Settings
-" ==========================================================
-syntax on                     " syntax highlighing
-filetype on                   " try to detect filetypes
-filetype plugin indent on     " enable loading indent file for filetype
-set number                    " Display line numbers
-set numberwidth=1             " using only 1 column (and 1 space) while possible
-set background=dark           " We are using dark background in vim
-set title                     " show title in console title bar
-set wildmenu                  " Menu completion in command mode on <Tab>
-set wildmode=full             " <Tab> cycles between all matching choices.
-set showcmd
-
-set colorcolumn=80
-
-" don't bell or blink
-"set noerrorbells
-"set vb t_vb=
-
-
-" don't outdent hashes
-inoremap # #
-
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set smarttab
-set autoindent
-set smartindent
-set mouse=a
-
-
-set ls=2  "Always show status line"
-
-
-set ruler
-
-set hidden
-
-set nolazyredraw
-set showmatch
-set encoding=utf8
+"set cursorline
+set hlsearch
+set incsearch               " Incrementally search while typing a /regex
+set ignorecase
 
 set backspace=indent,eol,start
+set autoindent
 
-set nobackup
+set smartindent
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
 set noswapfile
+" swap buffers without saving the current buffer.
+set hidden
 
-set undodir=~/.vim_runtime/undodir
-set undofile
+" unhighlight by pressing enter
+nnoremap <silent> <CR> :nohl<CR><CR>
 
-" displays tabs with :set list & displays when a line runs off-screen
-set listchars=tab:>.,trail:.,precedes:<,extends:>
+" use Ctrl and hjkl to navigate between split screen 'windows'
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+
+" Save files using sudo
+cmap w!! w !sudo tee % >/dev/null
+
+" Special characters
 set list
-
-""" Searching and Patterns
-set ignorecase              " Default to using case insensitive searches,
-set smartcase               " unless uppercase letters are used in the regex.
-set smarttab                " Handle tabs more intelligently
-set hlsearch                " Highlight searches by default.
-set incsearch               " Incrementally search while typing a /regex
-
-"""" Display
-if has("gui_running")
-    colorscheme desert
-    " Remove menu bar
-    set guioptions-=m
-    set guifont=Menlo:h14
-    "set guifont=Monaco:h14
-
-    " Remove toolbar
-    set guioptions-=T
-else
-    colorscheme zellner
-endif
-
-
-
+set listchars=tab:▸\ ,eol:¬

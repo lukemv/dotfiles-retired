@@ -8,7 +8,6 @@
 # iterate though all of the listed Plugin and Bam!.. it's already there... Apple..
 
 ########## Variables
-
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="bashrc vimrc vim"    
@@ -16,7 +15,7 @@ files="bashrc vimrc vim"
 ##########
 
 # create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
+echo "Creating $olddir for backup of any existing dotfiles in the home folder"
 mkdir -p $olddir
 echo "...done"
 
