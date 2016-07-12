@@ -1,0 +1,15 @@
+---
+- hosts: localhost 
+  vars: 
+    username: "lukem"
+    thisdir: "dotfiles"
+  tasks:
+  - name: dotfiles | creating symlinks 
+    file: 
+      src=/Users/{{username}}/{{thisdir}}/{{item.filename}}
+      dest=/Users/{{username}}/{{item.filename}} 
+      state=link
+    with_items:
+    - { filename: '.vimrc' }
+    - { filename: '.vim' }
+    - { filename: '.bash_profile' }
