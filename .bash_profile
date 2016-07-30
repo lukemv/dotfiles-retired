@@ -6,3 +6,5 @@ alias celar=clear
 alias vim='vim -n'
 alias ls='ls -l'
 
+#==[ source other stuff ]==
+source ~/.bash_aliases

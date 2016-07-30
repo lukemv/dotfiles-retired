@@ -1,62 +1,16 @@
 execute pathogen#infect()
 
-set nocompatible
-filetype plugin indent off
-syntax off
-
-"----------------- Vundle Start -----------------------"
-set rtp+=~/.vim/bundle/Vundle.vim
-
-" start vundle environment
-" the default is ~/.vim/bundle
-call vundle#begin()
-
-" list of plugins {{{2
-" let Vundle manage Vundle (this is required)
-Plugin 'gmarik/Vundle.vim'
-
-" to install a plugin add it here and run :PluginInstall.
-" to update the plugins run :PluginInstall! or :PluginUpdate
-" to delete a plugin remove it here and run :PluginClean
-
-" clang_complete bug workaround:
-"   cd to clang_complete
-"   $  git checkout 6a7ad82
-"Plugin 'Rip-Rip/clang_complete'
-"Plugin 'vim-scripts/CRefVim'
-"Plugin 'sjl/gundo.vim'
-"Plugin 'jondkinney/dragvisuals.vim'
-Plugin 'bling/vim-airline'
-"Plugin 'scrooloose/syntastic'
-"Plugin 'xolox/vim-misc'
-"Plugin 'xolox/vim-session'
-Plugin 'flazz/vim-colorschemes'
-"Plugin 'davidhalter/jedi-vim'
-
-" add plugins before this
-call vundle#end()
-"----------------- Vundle end ------------------------"
-
 syntax on
 
 " I like to use the spacebar as myleader key
 " The default is \
 let mapleader = "\<Space>"
 
-" colors {{{1
-"enable 256 colors when in gnome-terminal (my debian machine)
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-  colorscheme default"
-  "colorscheme google
-else
-  if has("gui_running")
-    colorscheme jelleybeans  " looks nice in gui.
-  else
-    colorscheme default
-  endif
-endif
+set background=dark
+colorscheme solarized
+
 " try <http://bytefluent.com/vivify/> to test colorschemes
+set guifont=Monaco:h18
 
 " Encoding
 set encoding=utf-8
@@ -73,8 +27,9 @@ set backspace=indent,eol,start
 set autoindent
 
 set smartindent
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set expandtab
 
 set noswapfile
@@ -90,9 +45,29 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 
+nnoremap <silent> <Leader>j :exe "resize -2"<CR>
+nnoremap <silent> <Leader>k :exe "resize +2"<CR>
+nnoremap <silent> <Leader>h :exe "vertical resize -5"<CR>
+nnoremap <silent> <Leader>l :exe "vertical resize +5"<CR>
+
+" Map 'jj' to the escape key in insert mode
+inoremap jj <ESC>
+
+" NERDTree toggle
+nnoremap <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+
+" Set laststatus in order to show airline status bar.
+set laststatus=2
+
 " Save files using sudo
 cmap w!! w !sudo tee % >/dev/null
 
 " Special characters
 set list
 set listchars=tab:▸\ ,eol:¬
+
+autocmd GUIEnter * set vb t_vb= " for your GUI
+autocmd VimEnter * set vb t_vb=
+
+map <Leader>nt :NERDTreeToggle<CR>
