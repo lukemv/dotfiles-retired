@@ -39,7 +39,7 @@ set hidden
 " unhighlight by pressing enter
 nnoremap <silent> <CR> :nohl<CR><CR>
 
-" use Ctrl and hjkl to navigate between split screen 'windows'
+"===[ MAPPINGS ]===
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
@@ -50,13 +50,26 @@ nnoremap <silent> <Leader>k :exe "resize +2"<CR>
 nnoremap <silent> <Leader>h :exe "vertical resize -5"<CR>
 nnoremap <silent> <Leader>l :exe "vertical resize +5"<CR>
 
+" CtrlP Stuff
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+nnoremap <Leader>p :CtrlPBuffer<CR>
+
+nnoremap <Leader>rs :%s/\s\+$//<CR>
 " Map 'jj' to the escape key in insert mode
 inoremap jj <ESC>
+" Turn off the stupid bell
+autocmd GUIEnter * set vb t_vb= " for your GUI
+autocmd VimEnter * set vb t_vb=
 
 " NERDTree toggle
 nnoremap <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
+" Set relative numbers to make jumping easier
+set relativenumber
+
+" cd to current file path
+nnoremap ,cd :cd %:p:h<CR>
 " Set laststatus in order to show airline status bar.
 set laststatus=2
 
@@ -65,11 +78,13 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Special characters
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:·\ ,eol:¬,trail:­
 
 autocmd GUIEnter * set vb t_vb= " for your GUI
 autocmd VimEnter * set vb t_vb=
 
+
+"===[ PLUGINS ]===
 map <Leader>nt :NERDTreeToggle<CR>
 
 "===[ vim easy motion keybindings ]=== 

@@ -13,3 +13,6 @@
     - { filename: '.vimrc' }
     - { filename: '.vim' }
     - { filename: '.bash_profile' }
+  - name: install coreutils
+    shell: brew install coreutils creates=/usr/local/Cellar/coreutils
+
