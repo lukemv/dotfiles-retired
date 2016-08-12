@@ -45,10 +45,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 
-nnoremap <silent> <Leader>j :exe "resize -2"<CR>
-nnoremap <silent> <Leader>k :exe "resize +2"<CR>
-nnoremap <silent> <Leader>h :exe "vertical resize -5"<CR>
-nnoremap <silent> <Leader>l :exe "vertical resize +5"<CR>
+nnoremap <silent> <Leader>rj :exe "resize -2"<CR>
+nnoremap <silent> <Leader>rk :exe "resize +2"<CR>
+nnoremap <silent> <Leader>rh :exe "vertical resize -5"<CR>
+nnoremap <silent> <Leader>rl :exe "vertical resize +5"<CR>
 
 " CtrlP Stuff
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -110,6 +110,9 @@ let g:indentLine_color_gui = '#A4E57E'
 " none X terminal
 let g:indentLine_color_tty_light = 7 " (default: 4)
 let g:indentLine_color_dark = 1 " (default: 2)
+
+"===[ CtrlP find everything ]===
+map <Leader>p :CtrlPMixed<CR>
 
 "===[ Syntastic ]===
 set statusline+=%#warningmsg#
