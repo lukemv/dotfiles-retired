@@ -1,5 +1,6 @@
 execute pathogen#infect()
 
+filetype plugin on
 syntax on
 
 " I like to use the spacebar as myleader key
@@ -10,7 +11,7 @@ set background=dark
 colorscheme solarized
 
 " try <http://bytefluent.com/vivify/> to test colorschemes
-set guifont=Monaco:h18
+set guifont=Monaco:h12
 
 " Encoding
 set encoding=utf-8
@@ -27,9 +28,9 @@ set backspace=indent,eol,start
 set autoindent
 
 set smartindent
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set expandtab
 
 set noswapfile
@@ -131,3 +132,7 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 let g:syntastic_javascript_checkers = ['jshint']
+
+
+set visualbell
+set noerrorbells
