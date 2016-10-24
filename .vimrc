@@ -1,14 +1,19 @@
 execute pathogen#infect()
 
 filetype plugin on
+filetype plugin indent on
+autocmd FileType yaml setl indentkeys-=<:>
+
 syntax on
 
 " I like to use the spacebar as myleader key
 " The default is \
 let mapleader = "\<Space>"
 
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
 set background=dark
-colorscheme solarized
+colorscheme hybrid 
 
 " try <http://bytefluent.com/vivify/> to test colorschemes
 set guifont=Monaco:h12
