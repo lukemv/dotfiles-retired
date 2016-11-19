@@ -1,4 +1,21 @@
-execute pathogen#infect()
+set nocompatible
+filetype off
+
+"======[ Vundle Start ]======"
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'chase/vim-ansible-yaml'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Yggdroot/indentLine'
+
+call vundle#end()
+"======[ Vundle End ]======"
 
 filetype plugin on
 filetype plugin indent on
@@ -119,25 +136,6 @@ let g:indentLine_color_dark = 1 " (default: 2)
 
 "===[ CtrlP find everything ]===
 map <Leader>p :CtrlPMixed<CR>
-
-"===[ Syntastic ]===
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-"===[ ultisnips ]===
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-let g:syntastic_javascript_checkers = ['jshint']
-
 
 set visualbell
 set noerrorbells
