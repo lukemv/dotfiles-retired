@@ -139,3 +139,6 @@ map <Leader>p :CtrlPMixed<CR>
 
 set visualbell
 set noerrorbells
+
+"== [ Turn off stupid JSON quotes hiding ]==
+set conceallevel=0
