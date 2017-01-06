@@ -1,19 +1,24 @@
 ---
-- hosts: localhost 
-  vars: 
+- hosts: localhost
+  vars:
     username: "lukem"
     thisdir: "dotfiles"
   tasks:
-  - name: dotfiles | creating symlinks 
-    file: 
+  - name: dotfiles | creating symlinks
+    file:
       src=/Users/{{username}}/{{thisdir}}/{{item.filename}}
-      dest=/Users/{{username}}/{{item.filename}} 
+      dest=/Users/{{username}}/{{item.filename}}
       state=link
     with_items:
     - { filename: '.vimrc' }
+    - { filename: '.zshrc' }
     - { filename: '.vim' }
     - { filename: '.bash_profile' }
     - { filename: '.gitconfig' }
+  - name: symlink zsh custom directory
+    file:
+      src=/Users/{{username}}/{{thisdir}}/custom
+      dest=/Users/{{username}}/.oh-my-zsh/custom
+      state=link
   - name: install coreutils
     shell: brew install coreutils creates=/usr/local/Cellar/coreutils
-
