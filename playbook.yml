@@ -22,3 +22,4 @@
       state=link
   - name: install coreutils
     shell: brew install coreutils creates=/usr/local/Cellar/coreutils
+#sudo curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-darwin-amd64-latest
