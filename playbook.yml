@@ -13,6 +13,7 @@
       state=link
     with_items:
     - { filename: '.vimrc' }
+    - { filename: '.tmux.conf' }
     - { filename: '.zshrc' }
     - { filename: '.vim' }
     - { filename: '.bash_profile' }
