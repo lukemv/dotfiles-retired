@@ -13,6 +13,7 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Yggdroot/indentLine'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 "======[ Vundle End ]======"
@@ -50,9 +51,9 @@ set backspace=indent,eol,start
 set autoindent
 
 set smartindent
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set expandtab
 
 set noswapfile
