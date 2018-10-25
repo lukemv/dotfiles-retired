@@ -6,13 +6,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
-Plugin 'Yggdroot/indentLine'
 Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
@@ -28,13 +26,7 @@ syntax on
 " The default is \
 let mapleader = "\<Space>"
 
-let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
 set background=dark
-colorscheme hybrid 
-
-" try <http://bytefluent.com/vivify/> to test colorschemes
-set guifont=Monaco:h12
 
 " Encoding
 set encoding=utf-8
@@ -44,7 +36,7 @@ set numberwidth=6
 
 "set cursorline
 set hlsearch
-set incsearch               " Incrementally search while typing a /regex
+set incsearch
 set ignorecase
 
 set backspace=indent,eol,start
