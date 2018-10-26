@@ -1,0 +1,2 @@
+
+alias rc="source ~/.bashrc"
