@@ -1,19 +1,18 @@
 ## Dotfiles and workstation configuration
 
-On a new workstation I typically do the following as a minimal setup:
+**tmux splits navigation**
 
-```
-$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-$ brew install ansible
-$ git clone {This Repo}
-$ cd {This Repo}
-$ ansible-playbook -i inventory playbook.yml 
-```
+The tmux splits have the following key bindings
 
-For daily aliases and environment variables use `~/.bash_aliases` which is sourced within `~/.bash_profile` 
+* CTRL+↑ - Go to split above
+* CTRL+↓ - Go to split below 
+* CTRL+← - Go to split left
+* CTRL+→ - Go to split right
 
-The following tweaks also get done on all of my workstations:
+On MacOS these keys are bound to Mission Control stuff, these can be unbound by doing in to preferences -> Keyboard -> Shortcuts.
 
+
+**Other random tweaks**
 Allow press and hold in Visual Studio Code.
 
 ```

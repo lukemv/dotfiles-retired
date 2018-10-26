@@ -1,20 +1,10 @@
 [core]
 	editor = vim
 	excludesfile = /Users/lukem/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [user]
 	name = Luke M
-	email = luke@vibrato.com.au
-[commit]
-	template = /Users/lukem/.stCommitMsg
-
+	email = luke@lukemuccillo.com
 [log]
 	decorate = true
-
 [alias]
 	lg=log --graph --color --decorate --oneline --all
