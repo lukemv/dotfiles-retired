@@ -12,6 +12,7 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 "======[ Vundle End ]======"
