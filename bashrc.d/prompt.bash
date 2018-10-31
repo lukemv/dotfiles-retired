@@ -54,6 +54,14 @@ promptCommand() {
   # return color to Terminal setting for text color
   local DEFAULT="\[\033[0;39m\]"
 
+
+  local VENV=''
+  # Display python virtualenv
+  if [[ $VIRTUAL_ENV != "" ]]
+    then
+    VENV=" ${RED}(${VIRTUAL_ENV##*/})"
+  fi
+
   # different prompt and color for root
   local PR="$ "
   local USERNAME_COLORED="${WHITE}${USER} @ ${WHITE}${HOSTNAME_SHORT}"
@@ -73,7 +81,7 @@ promptCommand() {
     BC=""
   fi
 
-  local TOP_LINE="${GREEN}${TC}${GREEN}[ ${USERNAME_COLORED} ${GREEN}]-${GREEN}[ ${WHITE}${TIME}${GREEN} ]-${GREEN}[ ${GRAY}${CURENT_PATH} ${GREEN}] ${GREEN}${BRANCH} ${RED}$ERRPROMPT"
+  local TOP_LINE="${GREEN}${TC}${GREEN}[ ${USERNAME_COLORED} ${GREEN}]-${GREEN}[ ${WHITE}${TIME}${GREEN} ]-${GREEN}[ ${GRAY}${CURENT_PATH} ${GREEN}] ${RED}${VENV} ${GREEN}${BRANCH} ${RED}$ERRPROMPT"
   local BOTTOM_LINE="${GREEN}${BC}${CYAN}[ ${GREEN}${PR}${DEFAULT}"
   export PS1="${TOP_LINE}\n${BOTTOM_LINE}"
 }
