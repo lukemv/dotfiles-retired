@@ -13,6 +13,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'roxma/vim-tmux-clipboard'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 "======[ Vundle End ]======"
