@@ -37,8 +37,15 @@ ask() {
 
 sentence="would you like to create a file link for"
 files=( bashrc bash_profile tmux.conf vimrc vim gitconfig bashrc.d )
-for file in ${files[@]}; do 
-	ask "$sentence .$file?" && ln -sfn "$(pwd)/${file}" "$HOME/.${file}" && echo "simlink created .$file" 
+for file in ${files[@]}; do
+	ask "(dotfile) $sentence .$file?" && ln -sfn "$(pwd)/${file}" "$HOME/.${file}" && echo "simlink created .$file"
 done
+
+files=( keybindings.json settings.json )
+for file in ${files[@]}; do
+    target="${HOME}/Library/Application Support/Code/User/${file}"
+	ask "(vscode) $sentence $file?" && ln -sfn "$(pwd)/vscode/${file}" "$target" && echo "simlink created $target"
+done
+
 
 ask "would you like to install Vundle?" && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
