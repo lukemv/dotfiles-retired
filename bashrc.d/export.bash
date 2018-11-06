@@ -16,3 +16,5 @@ function returncode
     echo ""
   fi
 }
+
+export GOPATH="$HOME/code/go"

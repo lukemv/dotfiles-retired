@@ -3,7 +3,7 @@
     "editor.wordWrap": true,
     "editor.tabSize": 2,
     "editor.fontSize": 12,
-    "go.gopath": "/Users/lukem/code/gopath",
+    "go.gopath": "/Users/lukem/code/go",
     "guides.enabled": false,
     "vim.disableAnnoyingNeovimMessage": true,
     "window.zoomLevel": 2,
