@@ -22,5 +22,10 @@
 "workbench.statusBar.visible": true,
 "go.useLanguageServer": true,
 "git.enableSmartCommit": true,
-"vsicons.dontShowNewVersionMessage": true
+"vsicons.dontShowNewVersionMessage": true,
+"python.jediEnabled": false,
+"vsintellicode.python.completionsEnabled": false,
+"python.condaPath": "/anaconda3/bin/conda",
+"python.linting.banditEnabled": true,
+"jupyter.appendResults": false
 }
