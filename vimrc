@@ -14,7 +14,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'roxma/vim-tmux-clipboard'
-Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 "======[ Vundle End ]======"
@@ -64,11 +63,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 
-nnoremap <silent> <Leader>rj :exe "resize -2"<CR>
-nnoremap <silent> <Leader>rk :exe "resize +2"<CR>
-nnoremap <silent> <Leader>rh :exe "vertical resize -5"<CR>
-nnoremap <silent> <Leader>rl :exe "vertical resize +5"<CR>
-
 " CtrlP Stuff
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 nnoremap <Leader>p :CtrlPBuffer<CR>
@@ -105,20 +99,6 @@ autocmd VimEnter * set vb t_vb=
 
 "===[ PLUGINS ]===
 map <Leader>nt :NERDTreeToggle<CR>
-
-"===[ vim easy motion keybindings ]=== 
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-overwin-f2)
-
-" Turn on case insensitive feature
-let g:EasyMotion_smartcase = 1
-
-" JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
 
 " Vim
 let g:indentLine_color_term = 239
