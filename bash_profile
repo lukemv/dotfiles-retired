@@ -1,4 +1,5 @@
 # .bash_profile
+default_conda="py36"
 
 if [ -f $HOME/.bashrc ]; then
   source $HOME/.bashrc
@@ -26,3 +27,5 @@ else
 fi
 unset __conda_setup
 # <<< conda init <<<
+
+source activate $default_conda

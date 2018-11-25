@@ -14,6 +14,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'roxma/vim-tmux-clipboard'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
 "======[ Vundle End ]======"
@@ -65,7 +66,8 @@ nnoremap <C-h> <C-w>h
 
 " CtrlP Stuff
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-nnoremap <Leader>p :CtrlPBuffer<CR>
+nnoremap <Leader>rC :source $MYVIMRC<CR>
+nnoremap <Leader>rc :edit $MYVIMRC<CR>
 
 nnoremap <Leader>rs :%s/\s\+$//<CR>
 " Map 'jj' to the escape key in insert mode
@@ -118,3 +120,11 @@ set noerrorbells
 
 "== [ Turn off stupid JSON quotes hiding ]==
 set conceallevel=0
+
+"== [ Fugitive ]=="
+" fugitive git bindings
+nnoremap <space>ga :Git add %:p<CR><CR>
+nnoremap <space>gs :Gstatus<CR>
+nnoremap <space>gc :Gcommit -v -q<CR>
+nnoremap <space>gd :Gdiff<CR>
+nnoremap <space>gm :Gmove<Space>
