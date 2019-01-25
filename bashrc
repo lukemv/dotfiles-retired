@@ -10,4 +10,3 @@ if [ -d $HOME/.bashrc.d ]; then
     source $file
   done
 fi
-
