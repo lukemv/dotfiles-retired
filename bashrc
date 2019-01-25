@@ -9,4 +9,5 @@ if [ -d $HOME/.bashrc.d ]; then
   for file in $HOME/.bashrc.d/*.bash; do
     source $file
   done
+  echo "sourced all the things"
 fi
