@@ -1,6 +1,9 @@
 
 alias rc="source ~/.bashrc"
-alias ls="ls -allh"
+
+export LS_OPTIONS='--color=auto'
+eval "$(dircolors -b)"
+alias ls='ls -allh $LS_OPTIONS'
 
 # added by Anaconda3 2018.12 installer
 # >>> conda init >>>
