@@ -20,9 +20,11 @@ function returncode
   fi
 }
 
+export GOROOT="/usr/local/go"
 export GOPATH="$HOME/code/go"
-export PATH=$PATH:$GOPATH/bin
-export PATH="$PATH:/home/lukem/.local/bin"
+
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
