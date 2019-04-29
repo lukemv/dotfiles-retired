@@ -20,10 +20,12 @@ function returncode
   fi
 }
 
+
 export GOROOT="/usr/local/go"
 export GOPATH="$HOME/code/go"
 
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
 export PATH="$HOME/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
