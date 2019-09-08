@@ -22,13 +22,13 @@ function returncode
 
 
 export GOROOT="/usr/local/go"
-export GOPATH="$HOME/code/go"
+export GOPATH="$HOME/code/"
 
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$HOME/.local/bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="/usr/local/Cellar/nvm/0.34.0"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
