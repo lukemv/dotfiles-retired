@@ -27,6 +27,7 @@ export GOPATH="$HOME/code/"
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
 
 export NVM_DIR="/usr/local/Cellar/nvm/0.34.0"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
