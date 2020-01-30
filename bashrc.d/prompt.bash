@@ -21,11 +21,33 @@ parse_git_branch ()
 
 
 promptCommand() {
-  # set an error string for the prompt, if applicable
   if [ $? -eq 0 ]; then
     ERRPROMPT=" "
+    HAS_ERROR=0
   else
     ERRPROMPT=" ($?) "
+    HAS_ERROR=1
+  fi
+
+  # set an error string for the prompt, if applicable
+  local GREEN="\[\033[0;32m\]"
+  local CYAN="\[\033[0;36m\]"
+  local BCYAN="\[\033[1;36m\]"
+  local YELLOW="\[\033[0;33m\]"
+  local BLUE="\[\033[0;34m\]"
+  local GRAY="\[\033[0;37m\]"
+  local DKGRAY="\[\033[1;30m\]"
+  local WHITE="\[\033[1;37m\]"
+  local RED="\[\033[0;31m\]"
+  # return color to Terminal setting for text color
+  local DEFAULT="\[\033[0;39m\]"
+
+  local STATUS_COLOR=$GREEN
+
+  if [ $HAS_ERROR -eq 1 ]; then
+    STATUS_COLOR=$YELLOW
+  else
+    STATUS_COLOR=$GREEN
   fi
 
 	local HOSTNAME_SHORT="$(hostname -s)"
@@ -42,18 +64,6 @@ promptCommand() {
   fi
 
   local TITLEBAR="\[\e]2;${CURENT_PATH}\a"
-
-  local GREEN="\[\033[0;32m\]"
-  local CYAN="\[\033[0;36m\]"
-  local BCYAN="\[\033[1;36m\]"
-  local BLUE="\[\033[0;34m\]"
-  local GRAY="\[\033[0;37m\]"
-  local DKGRAY="\[\033[1;30m\]"
-  local WHITE="\[\033[1;37m\]"
-  local RED="\[\033[0;31m\]"
-  # return color to Terminal setting for text color
-  local DEFAULT="\[\033[0;39m\]"
-
 
   local VENV=''
   # Display python virtualenv
@@ -73,8 +83,8 @@ promptCommand() {
 
   # use only ASCII symbols in linux console
   local DASH="-"
-  local TC="╔"
-  local BC="╩"
+  local TC=" ╔"
+  local BC="═╩"
   if [ "$TERM" = "linux" ]; then
     TITLEBAR=""
     DASH="-"
@@ -82,8 +92,8 @@ promptCommand() {
     BC=""
   fi
 
-  local TOP_LINE="${GREEN}${TC}[ ${USERNAME_COLORED} ${GREEN}]${DASH}${GREEN}[ ${WHITE}${TIME}${GREEN} ]${DASH}${GREEN}[ ${GRAY}${CURENT_PATH} ${GREEN}] ${RED}${VENV} ${GREEN}${BRANCH} ${RED}$ERRPROMPT"
-  local BOTTOM_LINE="${GREEN}${BC}${CYAN}[ ${GREEN}${PR}${DEFAULT}"
+  local TOP_LINE="${STATUS_COLOR}${TC}${CYAN}[ ${USERNAME_COLORED} ${GREEN}]${DASH}${GREEN}[ ${WHITE}${TIME}${GREEN} ]${DASH}${GREEN}[ ${GRAY}${CURENT_PATH} ${GREEN}] ${RED}${VENV} ${GREEN}${BRANCH} ${YELLOW}$ERRPROMPT"
+  local BOTTOM_LINE="${STATUS_COLOR}${BC}${CYAN}[ ${GREEN}${PR}${DEFAULT}"
   export PS1="${TOP_LINE}\n${BOTTOM_LINE}"
 }
 PROMPT_COMMAND=promptCommand
