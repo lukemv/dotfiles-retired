@@ -50,9 +50,9 @@
         { "command": "splitHorizontal", "keys": ["shift+alt+d"] },
         { "command": "splitVertical", "keys": ["alt+d"] },
         // Vim keybindings
-        { "command": { "action": "moveFocus", "direction": "down" }, "keys": [ "ctrl+j" ] },
-        { "command": { "action": "moveFocus", "direction": "left" }, "keys": [ "ctrl+h" ] },
-        { "command": { "action": "moveFocus", "direction": "right" }, "keys": [ "ctrl+l" ] },
-        { "command": { "action": "moveFocus", "direction": "up" }, "keys": [ "ctrl+k" ] }
+        { "command": { "action": "moveFocus", "direction": "down" }, "keys": [ "alt+j" ] },
+        { "command": { "action": "moveFocus", "direction": "left" }, "keys": [ "alt+h" ] },
+        { "command": { "action": "moveFocus", "direction": "right" }, "keys": [ "alt+l" ] },
+        { "command": { "action": "moveFocus", "direction": "up" }, "keys": [ "alt+k" ] }
     ]
 }
