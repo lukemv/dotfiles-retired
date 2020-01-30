@@ -66,14 +66,15 @@ promptCommand() {
   local PR="$ "
   local USERNAME_COLORED="${WHITE}${USER} @ ${WHITE}${HOSTNAME_SHORT}"
   if [ "$UID" = "0" ]; then
-    PR="# "
+    echo "I am root"
+    PR="# " 
     USERNAME_COLORED="${RED}${USER}${GREEN}@${RED}${HOSTNAME_SHORT}"
   fi
 
   # use only ASCII symbols in linux console
-  local DASH="\e(0q\e(B"
-  local TC="\]\e(0l\e(B\]"
-  local BC="\[\e(0\]m\[\e(B\]"
+  local DASH="-"
+  local TC="╔"
+  local BC="╩"
   if [ "$TERM" = "linux" ]; then
     TITLEBAR=""
     DASH="-"
@@ -81,7 +82,7 @@ promptCommand() {
     BC=""
   fi
 
-  local TOP_LINE="${GREEN}${TC}${GREEN}[ ${USERNAME_COLORED} ${GREEN}]-${GREEN}[ ${WHITE}${TIME}${GREEN} ]-${GREEN}[ ${GRAY}${CURENT_PATH} ${GREEN}] ${RED}${VENV} ${GREEN}${BRANCH} ${RED}$ERRPROMPT"
+  local TOP_LINE="${GREEN}${TC}[ ${USERNAME_COLORED} ${GREEN}]${DASH}${GREEN}[ ${WHITE}${TIME}${GREEN} ]${DASH}${GREEN}[ ${GRAY}${CURENT_PATH} ${GREEN}] ${RED}${VENV} ${GREEN}${BRANCH} ${RED}$ERRPROMPT"
   local BOTTOM_LINE="${GREEN}${BC}${CYAN}[ ${GREEN}${PR}${DEFAULT}"
   export PS1="${TOP_LINE}\n${BOTTOM_LINE}"
 }

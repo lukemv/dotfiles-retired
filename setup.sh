@@ -36,7 +36,7 @@ ask() {
 }
 
 sentence="would you like to create a file link for"
-files=( bashrc bash_profile tmux.conf vimrc vim gitconfig bashrc.d )
+files=( bashrc bash_profile tmux.conf vimrc vim gitconfig bashrc.d scripts )
 for file in ${files[@]}; do
 	ask "(dotfile) $sentence .$file?" && ln -sfn "$(pwd)/${file}" "$HOME/.${file}" && echo "simlink created .$file"
 done

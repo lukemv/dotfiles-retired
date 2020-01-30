@@ -1,0 +1,7 @@
+#!/bin/bash
+if grep -q "Microsoft" /proc/version; 
+then
+    echo "WSL:TRUE"
+else
+    echo "WSL:FALSE"
+fi
