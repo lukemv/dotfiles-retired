@@ -1,7 +1,14 @@
-if grep -q "Microsoft" /proc/version; 
+# Catalina deprecation warning disable
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+
+if [ -f /proc/version ]
 then
-   export WSL=1
-   export DOCKER_HOST="tcp://localhost:2375"/
+  if grep -q "Microsoft" /proc/version;
+  then
+    export WSL=1
+    export DOCKER_HOST="tcp://localhost:2375"/
+  fi
 fi
 
 # make less more friendly for non-text input files, see lesspipe(1)
