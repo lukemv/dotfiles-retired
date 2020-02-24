@@ -3,12 +3,11 @@
     "editor.wordWrap": true,
     "editor.tabSize": 2,
     "editor.fontSize": 12,
-    "go.gopath": "/Users/lukem/code/go",
+    "go.gopath": "/Users/lukem/code",
     "guides.enabled": false,
     "vim.disableAnnoyingNeovimMessage": true,
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 0,
     "files.trimTrailingWhitespace": true,
-    "workbench.colorTheme": "Blakai Theme",
     "typescript.check.tscVersion": false,
     "vim.insertModeKeyBindings": [{
         "before": ["j", "j"],
@@ -27,5 +26,10 @@
 "vsintellicode.python.completionsEnabled": false,
 "python.condaPath": "/anaconda3/bin/conda",
 "python.linting.banditEnabled": true,
-"jupyter.appendResults": false
+"jupyter.appendResults": false,
+"workbench.colorTheme": "Dracula",
+"vim.useSystemClipboard": true,
+"catch2TestExplorer.userId": "aab835ccd899705efe2ea9fb63dd252b56788552",
+"catch2TestExplorer.debugConfigTemplate": null,
+"explorer.compactFolders": false
 }
