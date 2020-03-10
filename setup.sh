@@ -49,3 +49,6 @@ done
 
 
 ask "would you like to install Vundle?" && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+
+ask "(dotfile) would you like to link .config/nvim?" && ln -sfn "$(pwd)/nvim" "$HOME/.config/nvim" && echo "simlink created nvim"

@@ -9,27 +9,46 @@
     "window.zoomLevel": 0,
     "files.trimTrailingWhitespace": true,
     "typescript.check.tscVersion": false,
-    "vim.insertModeKeyBindings": [{
-        "before": ["j", "j"],
-        "after": ["<Esc>"]
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "extensions.ignoreRecommendations": true,
+    "csharp.format.enable": false,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.statusBar.visible": true,
+    "go.useLanguageServer": true,
+    "git.enableSmartCommit": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "python.jediEnabled": false,
+    "vsintellicode.python.completionsEnabled": false,
+    "python.condaPath": "/anaconda3/bin/conda",
+    "python.linting.banditEnabled": true,
+    "jupyter.appendResults": false,
+    "workbench.colorTheme": "Winter is Coming (Light)",
+    "vim.useSystemClipboard": true,
+    "catch2TestExplorer.userId": "aab835ccd899705efe2ea9fb63dd252b56788552",
+    "catch2TestExplorer.debugConfigTemplate": null,
+    "explorer.compactFolders": false,
+    "catch2TestExplorer.logSentry": "enable",
+    "terraform.indexing": {
+        "enabled": false,
+        "liveIndexing": false,
+        "delay": 500,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ]
+    },
+    "terraform.languageServer": {
+        "enabled": true,
     }
-],
-"extensions.ignoreRecommendations": true,
-"csharp.format.enable": false,
-"explorer.confirmDragAndDrop": false,
-"workbench.iconTheme": "material-icon-theme",
-"workbench.statusBar.visible": true,
-"go.useLanguageServer": true,
-"git.enableSmartCommit": true,
-"vsicons.dontShowNewVersionMessage": true,
-"python.jediEnabled": false,
-"vsintellicode.python.completionsEnabled": false,
-"python.condaPath": "/anaconda3/bin/conda",
-"python.linting.banditEnabled": true,
-"jupyter.appendResults": false,
-"workbench.colorTheme": "Dracula",
-"vim.useSystemClipboard": true,
-"catch2TestExplorer.userId": "aab835ccd899705efe2ea9fb63dd252b56788552",
-"catch2TestExplorer.debugConfigTemplate": null,
-"explorer.compactFolders": false
 }
