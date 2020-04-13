@@ -1,0 +1,1 @@
+cp .\windows\profile.ps1 $env:Home\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
