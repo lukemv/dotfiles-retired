@@ -25,3 +25,5 @@ function prompt {
     Write-Host "] `r`n`$" -ForegroundColor Green -NoNewLine
     return " "
 }
+
+[Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\tools\neovim\Neovim\bin", "Machine")
